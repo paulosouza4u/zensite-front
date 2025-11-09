@@ -1,0 +1,5 @@
+https://dummyjson.com
+
+ESTUDOS
+1- estrutura app, public, private e proxy
+2- metadata, server side render, client side render, fetch, tailwind, components
