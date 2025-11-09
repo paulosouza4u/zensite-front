@@ -6,11 +6,16 @@ const eslintConfig = defineConfig([
     ...nextVitals,
     ...nextTs,
     {
+        files: ["**/*.{js,jsx,ts,tsx}"],
         rules: {
+            // aspas duplas
             quotes: ["error", "double", {avoidEscape: true}],
+            // ponto e vírgula obrigatório
             semi: ["error", "always"],
-            objectCurlySpacing: ["error", "always"],
-            noUnexpectedMultiline: "error",
+            // espaço dentro de {} de objetos e imports
+            "object-curly-spacing": ["error", "always"],
+            // evita ambiguidades semicolons/ASi
+            "no-unexpected-multiline": "error",
         },
     },
     // Override default ignores of eslint-config-next.

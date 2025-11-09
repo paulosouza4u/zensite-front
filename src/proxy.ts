@@ -1,19 +1,19 @@
-import {type MiddlewareConfig, type NextRequest, NextResponse} from "next/server";
+import { type MiddlewareConfig, type NextRequest, NextResponse } from "next/server";
 
 const publicRoutes = [
-    {path: '/sign-in', whenAuthenticated: 'redirect'},
-    {path: '/register', whenAuthenticated: 'redirect'},
-    {path: '/pricing', whenAuthenticated: 'next'},
+    { path: "/sign-in", whenAuthenticated: "redirect" },
+    { path: "/register", whenAuthenticated: "redirect" },
+    { path: "/pricing", whenAuthenticated: "next" },
 ] as const;
 
-const REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE = '/sign-in';
+const REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE = "/sign-in";
 
 export function proxy(request: NextRequest) {
-    console.log('proxy');
+    console.log("proxy");
 
     const path = request.nextUrl.pathname;
     const publicRoute = publicRoutes.find(route => route.path === path);
-    const authToken = request.cookies.get('token')
+    const authToken = request.cookies.get("token");
 
     if (!authToken && publicRoute) {
         return NextResponse.next();
@@ -25,9 +25,9 @@ export function proxy(request: NextRequest) {
         return NextResponse.redirect(redirectUrl);
     }
 
-    if (authToken && publicRoute && publicRoute.whenAuthenticated === 'redirect') {
+    if (authToken && publicRoute && publicRoute.whenAuthenticated === "redirect") {
         const redirectUrl = request.nextUrl.clone();
-        redirectUrl.pathname = '/';
+        redirectUrl.pathname = "/";
         return NextResponse.redirect(redirectUrl);
     }
 
@@ -43,6 +43,6 @@ export function proxy(request: NextRequest) {
 export const config: MiddlewareConfig = {
     matcher: [
         // Exclude API routes, static files, image optimizations, and .png files
-        '/((?!api|_next/static|_next/image|favicon.ico|.*\\.png$|robots.txt).*)',
+        "/((?!api|_next/static|_next/image|favicon.ico|.*\\.png$|robots.txt).*)",
     ]
 };
