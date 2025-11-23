@@ -1,10 +1,12 @@
 import { type MiddlewareConfig, type NextRequest, NextResponse } from "next/server";
 
 const publicRoutes = [
+    { path: "/", whenAuthenticated: "next" },
+    { path: "/blog", whenAuthenticated: "next" },
+    { path: "/pricing", whenAuthenticated: "next" },
+    { path: "/about", whenAuthenticated: "next" },
     { path: "/sign-in", whenAuthenticated: "redirect" },
     { path: "/register", whenAuthenticated: "redirect" },
-    { path: "/pricing", whenAuthenticated: "next" },
-    { path: "/posts", whenAuthenticated: "next" },
 ] as const;
 
 const REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE = "/sign-in";
@@ -28,7 +30,7 @@ export function proxy(request: NextRequest) {
 
     if (authToken && publicRoute && publicRoute.whenAuthenticated === "redirect") {
         const redirectUrl = request.nextUrl.clone();
-        redirectUrl.pathname = "/";
+        redirectUrl.pathname = "/dashboard";
         return NextResponse.redirect(redirectUrl);
     }
 

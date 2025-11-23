@@ -29,7 +29,6 @@ export default function RootLayout({
     return (
         <html lang="pt-br">
         <body cz-shortcut-listen="true">
-        <h1>Header Geral - Raiz</h1>
         {children}
         </body>
         </html>

@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+.debug {
+    outline: 1px solid red;
+}
+
 /* Exemplo básico */
 :root {
     --bg: #ffffff;

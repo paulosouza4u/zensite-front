@@ -1,4 +1,6 @@
 import React from "react";
+import Layout from "./_components/layout";
+import Menu from "./_components/menu";
 
 export default function PublicLayout({
                                          children,
@@ -6,9 +8,9 @@ export default function PublicLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div>
-            <h1>Public Layout</h1>
+        <Layout>
+            <Menu/>
             {children}
-        </div>
+        </Layout>
     );
 }
