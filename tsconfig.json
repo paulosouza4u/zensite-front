@@ -25,8 +25,14 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "@public/*": [
+        "./src/app/(public)/*"
+      ],
+      "@private/*": [
+        "./src/app/(private)/*"
       ]
-    },
+    }
   },
   "include": [
     "next-env.d.ts",

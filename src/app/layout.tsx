@@ -1,6 +1,6 @@
 import "./globals.css";
 import React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 // Metadata geral para páginas que não tem
 export const metadata: Metadata = {
@@ -21,6 +21,12 @@ export const metadata: Metadata = {
             follow: true,
         }
     }
+};
+
+// Viewport para funcionamento correto do tailwind
+export const viewport: Viewport = {
+    width: "device-width",
+    initialScale: 1.0,
 };
 
 export default function RootLayout({

@@ -1,4 +1,6 @@
 import React from "react";
+import Menu from "@public/_components/header";
+import Layout from "@/src/app/(public)/_components/layout";
 
 export default function PrivateLayout({
                                           children,
@@ -6,9 +8,10 @@ export default function PrivateLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div>
-            <h1>Private Layout</h1>
+        <Layout>
+            <Menu/>
+            <h1>Private Layout - Sidebar TWO COLUMN</h1>
             {children}
-        </div>
+        </Layout>
     );
 }
