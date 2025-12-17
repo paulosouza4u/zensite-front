@@ -4,10 +4,10 @@ import Contact from "@public/(home)/sessions/contact";
 
 export default function Home() {
     return (
-        <main className="debug">
-            {/** Modal AVISOS cookie */}
+        <main>
+            {/** TODO Modal AVISOS cookie */}
             <Banner/>
-            {/** Blog/Notícias section */}
+            {/** TODO Blog/Notícias section */}
             <About/>
             <Contact/>
         </main>

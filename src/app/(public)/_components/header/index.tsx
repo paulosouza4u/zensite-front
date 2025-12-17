@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import Logotipo from "@images/logotipo_black.png";
 
 export default function Index() {
     return (
@@ -9,15 +11,15 @@ export default function Index() {
             </div>
             <nav>
                 <div className="flex justify-between py-4 bg-white px-4 md:px-10">
-                    <div className="debug">Logo</div>
+                    <Image src={Logotipo} alt="Logotipo" width={135} height={29}/>
                     <div className="flex gap-4">
-                        <Link href="/" className="debug">Home</Link>
-                        <Link href="/blog" className="debug">Blog/Notícias</Link>
-                        <Link href="/pricing" className="debug">Pricing</Link>
-                        <Link href="/about" className="debug">About</Link>
-                        <Link href="/#contact" className="debug">Contact</Link>
-                        <Link href="/register" className="debug">Register</Link>
-                        <Link href="/sign-in" className="debug">Sign-In</Link>
+                        <Link href="/">Home</Link>
+                        <Link href="/blog">Blog/Notícias</Link>
+                        {/*<Link href="/pricing">Pricing</Link>*/}
+                        {/*<Link href="/about">About</Link>*/}
+                        <Link href="/#contact">Contact</Link>
+                        {/*<Link href="/register">Register</Link>*/}
+                        <Link href="/sign-in">Sign-In</Link>
                     </div>
                 </div>
             </nav>

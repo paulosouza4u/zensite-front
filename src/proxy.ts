@@ -12,11 +12,9 @@ const publicRoutes = [
 const REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE = "/sign-in";
 
 export function proxy(request: NextRequest) {
-    console.log("proxy");
-
     const path = request.nextUrl.pathname;
     const publicRoute = publicRoutes.find(route => route.path === path);
-    const authToken = request.cookies.get("token");
+    const authToken = request.cookies.get("session");
 
     if (!authToken && publicRoute) {
         return NextResponse.next();
@@ -35,8 +33,7 @@ export function proxy(request: NextRequest) {
     }
 
     if (authToken && !publicRoute) {
-        // Apenas checar se JWT está expirado
-        // Se sim, remover o cookie e redirecionar para login
+        // TODO Apenas checar se JWT está expirado. Se sim, remover o cookie e redirecionar para login
         return NextResponse.next();
     }
 

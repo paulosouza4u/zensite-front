@@ -31,6 +31,9 @@
       ],
       "@private/*": [
         "./src/app/(private)/*"
+      ],
+      "@images/*": [
+        "./src/assets/images/*"
       ]
     }
   },

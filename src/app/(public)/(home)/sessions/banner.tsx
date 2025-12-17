@@ -1,8 +1,11 @@
+import Image from "next/image";
+import ImageBanner from "@images/banner.png";
+
 export default function Banner() {
     return (
-        <section className="px-4 md:px-10 py-44">
-            {/** Botão Página AVISOS */}
-            Banner
+        <section>
+            {/** TODO Botão Página AVISOS */}
+            <Image src={ImageBanner} alt="Banner" width={1920} height={500}/>
         </section>
     );
 }
