@@ -23,7 +23,7 @@ export default function PostsClient() {
 
     return (
         <main>
-            <h1 className="text-center mt-5 mb-2 font-bold text-3xl">Posts!</h1>
+            <h1 className="text-center mt-5 mb-2 font-bold text-3xl">Posts Fetch Client-Side!</h1>
             <div className="flex flex-col gap-4 mx-2">
                 <div>
                     <button className="border rounded p-2" onClick={() => alert("Ok!")}>Btn Teste</button>

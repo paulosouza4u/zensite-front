@@ -1,5 +1,6 @@
 import React from "react";
 import Menu from "@public/_components/header";
+import Footer from "@public/_components/footer";
 import Layout from "@/src/app/(public)/_components/layout";
 
 export default function PrivateLayout({
@@ -10,8 +11,8 @@ export default function PrivateLayout({
     return (
         <Layout>
             <Menu/>
-            <h1>Private Layout - Sidebar TWO COLUMN</h1>
             {children}
+            <Footer/>
         </Layout>
     );
 }

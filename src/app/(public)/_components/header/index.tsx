@@ -1,8 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import { verifySession } from "@/src/lib/session";
 import Logotipo from "@images/logotipo_black.png";
 
-export default function Index() {
+export default async function Index() {
+    const session = await verifySession();
+
     return (
         <header>
             <div className="flex justify-between text-xs text-white py-2 bg-neutral-600 px-4 md:px-10">
@@ -19,7 +22,15 @@ export default function Index() {
                         {/*<Link href="/about">About</Link>*/}
                         <Link href="/#contact">Contact</Link>
                         {/*<Link href="/register">Register</Link>*/}
-                        <Link href="/sign-in">Sign-In</Link>
+                        {session ? (
+                            <Link href="/dashboard"><span className="p-1 border rounded hover:bg-neutral-200">
+                                Dashboard
+                            </span></Link>
+                        ) : (
+                            <Link href="/sign-in"><span className="p-1 border rounded hover:bg-neutral-200">
+                                Sign-In
+                            </span></Link>
+                        )}
                     </div>
                 </div>
             </nav>
