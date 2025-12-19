@@ -1,5 +1,6 @@
 import "server-only";
 import admin from "firebase-admin";
+import { getFirestore } from "firebase-admin/firestore";
 
 /**
  * Firebase Admin SDK
@@ -17,5 +18,7 @@ if (!admin.apps.length) {
         }),
     });
 }
+
+export const db = getFirestore();
 
 export { admin };

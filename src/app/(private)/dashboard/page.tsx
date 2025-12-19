@@ -4,7 +4,7 @@ import Content from "@private/_components/content";
 export default function Dashboard() {
     return (
         <main>
-            <div className="flex py-4">
+            <div className="flex py-44">
                 <Sidebar/>
                 <Content/>
             </div>

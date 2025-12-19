@@ -18,7 +18,7 @@ export default async function Index() {
                     <div className="flex gap-4">
                         <Link href="/">Home</Link>
                         <Link href="/blog">Blog/Notícias</Link>
-                        {/*<Link href="/pricing">Pricing</Link>*/}
+                        <Link href="/pricing">Pricing</Link>
                         {/*<Link href="/about">About</Link>*/}
                         <Link href="/#contact">Contact</Link>
                         {/*<Link href="/register">Register</Link>*/}
