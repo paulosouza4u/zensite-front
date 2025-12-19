@@ -8,6 +8,9 @@ import { getFirestore } from "firebase-admin/firestore";
  * Roda apenas no ambiente server/Node.js (Server Components/API Routes)
  */
 if (!admin.apps.length) {
+
+    console.log("Iniciando Firebase com ID:", process.env.FIREBASE_PROJECT_ID);
+
     admin.initializeApp({
         credential: admin.credential.cert({
             projectId: process.env.FIREBASE_PROJECT_ID,
