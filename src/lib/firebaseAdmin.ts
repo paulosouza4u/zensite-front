@@ -10,6 +10,8 @@ import { getFirestore } from "firebase-admin/firestore";
 if (!admin.apps.length) {
 
     console.log("Iniciando Firebase com ID:", process.env.FIREBASE_PROJECT_ID);
+    console.log("Iniciando Firebase com ID:", process.env.FIREBASE_CLIENT_EMAIL);
+    console.log("Iniciando Firebase com ID:", process.env.FIREBASE_PRIVATE_KEY);
 
     admin.initializeApp({
         credential: admin.credential.cert({
